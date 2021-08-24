@@ -417,7 +417,6 @@ namespace DialogueEx {
 
     
     // Returns the first NPC response info that passes its condition check.
-    // Todo: Handle Random End flagged infos.
     TESTopicInfo* GetNPCInfo(BGSSceneActionPlayerDialogue* playerDialogue, int optionID)
     {
         BuildDialogueMap();
@@ -542,7 +541,6 @@ namespace DialogueEx {
 
     void Init()
     {
-        _MESSAGE("Init DialogueEx");
         // Hook dialogue option -> TopicInfo function for responses.
         GetInfoForPlayerDialogueOption_Original = Utils::Hook(GetInfoForPlayerDialogueOption_Hook, GetInfoForPlayerDialogueOption_HookTarget.GetUIntPtr());
         GetInfoForNPCDialogueOption_Original = Utils::Hook(GetInfoForNPCDialogueOption_Hook, GetInfoForNPCDialogueOption_HookTarget.GetUIntPtr());
